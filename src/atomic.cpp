@@ -17,7 +17,7 @@
 
 #include "include/apple_availability.h"
 
-#ifdef __linux__
+#if defined(__linux__) && !defined(__NuttX__)
 
 #include <unistd.h>
 #include <linux/futex.h>
@@ -42,7 +42,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#ifdef __linux__
+#if defined(__linux__) && !defined(__NuttX__)
 
 static void __libcpp_platform_wait_on_address(__cxx_atomic_contention_t const volatile* __ptr,
                                               __cxx_contention_t __val)
